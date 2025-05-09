@@ -1,0 +1,70 @@
+<f:layout name="Default" /><f:section name="main">
+<div class="row">
+    <div class="large-12 medium-12 small-12 column">
+        <h1>{einsatz.title}</h1>
+    </div>
+    <div class="large-8 medium-12 small-12 column">
+        <f:format.html>{einsatz.description}</f:format.html>
+        <h2>Fahrzeuge Ortsfeuerwehr Z&ouml;rbig:</h2>
+        <ul class="fahrzeuge">
+            <f:for each="{einsatz.cars}" as="car">
+                <li style="list-style:none;float:left;">
+                    <a href="{car.link}">
+                        <f:image image="{car.image}" alt="{car.title}" /><br />{car.title}
+                    </a>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+    <div class="large-4 medium-12 small-12 column">
+        <div class="row">
+        <div class="large-12 medium-6 small-12 column">    
+            <div class="panel psmall">
+                <p><b>Ortsfeuerwehr:</b><br />{einsatz.stations}</p>
+                <p><b>Einsatznummer:</b><br />{einsatz.number}</p>
+                <p><b>Einsatzart:</b><br />{einsatz.type.title}</p>                
+                <p><b>Einsatzort:</b><br />{einsatz.location}</p>
+                <p><b>Einsatzbeginn:</b><br />{einsatz.datefrom -> f:format.date(format: 'd.m.Y H:i')} Uhr</p>
+                <p><b>Einsatzende:</b><br />{einsatz.dateto -> f:format.date(format: 'd.m.Y H:i')} Uhr</p>
+            </div>
+        </div>
+        <div class="large-12 medium-6 small-12 column">
+                <div id="einsatzslider" class="owl-carousel">
+                    <!--###IMAGE_ITEM###-->
+                   <f:for each="{einsatz.images}" as="image">
+    <f:if condition="{image}">
+        <f:image image="{image}" alt="{einsatz.title}" width="300" />
+    </f:if>
+</f:for>
+
+                    <!-- mit loghtbox-link-->
+                    <f:for each="{einsatz.images}" as="image">
+                        <a href="{f:uri.image(image: image, maxWidth: 1600)}" data-lightbox="einsatz" title="{image.originalResource.title}">
+                            <f:image image="{image}" alt="{image.originalResource.title}" width="300" />
+                        </a>
+                    </f:for>
+
+                    <!--###IMAGE_ITEM###-->
+                </div>
+                    <script>
+                    $(document).ready(function() {
+                    $("#einsatzslider").owlCarousel({
+                    singleItem : true,
+                    navigation : true,
+                    navigationText : ["zur&uuml;ck","weiter"],
+                    slideSpeed : 400,
+                    autoHeight : true,
+                    lazyLoad : true,
+                    lazyFollow : true,
+                    addClassActive : true,
+                    });
+                    });
+                    </script>
+        </div>
+    </div> </div>
+    <div class="large-12 medium-12 small-12 column">
+      <a href="javascript:history.back()" class="button small hide">zur&uuml;ck zur Liste</a>
+        <br style="clear:both;" /> <small>Letzte Aktualisierung: {einsatz.tstamp}</small>
+    </div>
+</div>
+</f:section>

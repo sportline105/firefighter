@@ -1,0 +1,21 @@
+plugin.tx_firefighter {
+  view {
+    templateRootPaths.0 = EXT:firefighter/Resources/Private/Templates/
+    partialRootPaths.0 = EXT:firefighter/Resources/Private/Partials/
+    layoutRootPaths.0 = EXT:firefighter/Resources/Private/Layouts/
+  }
+
+  persistence {
+    storagePid = {$plugin.tx_firefighter.persistence.storagePid}
+  }
+
+  features {
+    # Optional: enables full language fallback
+    ignoreAllEnableFieldsInBe = 1
+    requireCHashArgumentForActionArguments = 1
+  }
+
+  settings {
+    # Deine eigenen Konfigurationswerte
+  }
+}

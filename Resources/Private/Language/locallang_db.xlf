@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+  <file source-language="en" datatype="plaintext" original="messages" date="2025-05-06T00:00:00Z">
+    <header/>
+    <body>
+      <trans-unit id="tx_firefighter_domain_model_einsatz.title">
+        <source>Titel des Einsatzes</source>
+      </trans-unit>
+      <trans-unit id="tx_firefighter_domain_model_einsatz.location">
+        <source>Einsatzort</source>
+      </trans-unit>
+      <trans-unit id="tx_firefighter_domain_model_einsatz.description">
+        <source>Beschreibung</source>
+      </trans-unit>
+      <trans-unit id="tx_firefighter_domain_model_einsatz.datefrom">
+        <source>Einsatzbeginn</source>
+      </trans-unit>
+      <trans-unit id="tx_firefighter_domain_model_einsatz.dateto">
+        <source>Einsatzende</source>
+      </trans-unit>
+      <trans-unit id="tx_firefighter_domain_model_einsatz.stations">
+        <source>Ortsfeuerwehr</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

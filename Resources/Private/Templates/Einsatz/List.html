@@ -1,0 +1,22 @@
+<f:layout name="Default" />
+<f:section name="main">
+<!-- Altes Template ###LIST_TABLE###-->
+<h1 class="csc-firstHeader">Einsatz&uuml;bersicht</h1>
+    <!--###LIST_TABLE_ROW###-->
+    <f:variable name="total" value="{einsaetze -> f:count()}" />
+    <f:for each="{einsaetze}" as="einsatz" iteration="i">
+        <div class="panelsmall">
+            <f:link.action action="show" arguments="{einsatz: einsatz}">
+                <div class="row">
+                    <div class="small-2 medium-1 columns enumber text-center einsatznummer">{total - i.index}</div>
+                    <div class="small-10 medium-11 column">
+                        <div class="row">
+                            <div class="small-12 column emeta">{einsatz.datefrom -> f:format.date(format: 'd.m.Y, H:i')} - {einsatz.dateto -> f:format.date(format: 'H:i')} Uhr</div>
+                            <div class="small-12 column etitle"><b>{einsatz.title}</b> - <em>{einsatz.location}</em></div>
+                        </div>
+                    </div>
+                    </div>
+            </f:link.action>
+        </div>
+    </f:for>
+</f:section>

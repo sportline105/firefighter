@@ -12,8 +12,11 @@ class EinsatzController extends ActionController
      */
     protected $einsatzRepository;
 
-    // Moderne Dependency Injection (ab TYPO3 10+)
-    public function __construct(EinsatzRepository $einsatzRepository)
+
+    /**
+     * Inject the repository (compatible with TYPO3 9.5)
+     */
+    public function injectEinsatzRepository(EinsatzRepository $einsatzRepository): void
     {
         $this->einsatzRepository = $einsatzRepository;
     }

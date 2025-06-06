@@ -7,7 +7,10 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 
 class RenameTablesWizard implements UpgradeWizardInterface
 {
-    protected array $tablesToRename = [
+    /**
+     * @var array
+     */
+    protected $tablesToRename = [
         'tx_firefighter_einsatz' => 'tx_firefighter_domain_model_einsatz',
         'tx_firefighter_type' => 'tx_firefighter_domain_model_type',
         'tx_firefighter_car' => 'tx_firefighter_domain_model_car',

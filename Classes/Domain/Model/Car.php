@@ -6,9 +6,20 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 
 class Car extends AbstractEntity
 {
-    protected string $title = '';
-    protected string $link = '';
-    protected ?FileReference $image = null;
+    /**
+     * @var string
+     */
+    protected $title = '';
+
+    /**
+     * @var string
+     */
+    protected $link = '';
+
+    /**
+     * @var FileReference|null
+     */
+    protected $image = null;
 
     public function getTitle(): string
     {

@@ -10,21 +10,64 @@ use Vendor\Firefighter\Domain\Model\Type;
 
 class Einsatz extends AbstractEntity
 {
-    protected string $title = '';
-    protected string $location = '';
-    protected string $description = '';
-    protected string $shortDescription = '';
-    protected ?\DateTime $datefrom = null;
-    protected ?\DateTime $dateto = null;
-    protected string $geoCoords = '';
-    protected string $number = '';
-    protected int $mens = 0;
+    /**
+     * @var string
+     */
+    protected $title = '';
+
+    /**
+     * @var string
+     */
+    protected $location = '';
+
+    /**
+     * @var string
+     */
+    protected $description = '';
+
+    /**
+     * @var string
+     */
+    protected $shortDescription = '';
+
+    /**
+     * @var \DateTime|null
+     */
+    protected $datefrom = null;
+
+    /**
+     * @var \DateTime|null
+     */
+    protected $dateto = null;
+
+    /**
+     * @var string
+     */
+    protected $geoCoords = '';
+
+    /**
+     * @var string
+     */
+    protected $number = '';
+
+    /**
+     * @var int
+     */
+    protected $mens = 0;
+
+    /**
+     * @var string
+     */
+    protected $stations = '';
 
     /**
      * Fahrzeuge (MM-Beziehung)
      * @var ObjectStorage<Car>
      */
-    protected ObjectStorage $cars;
+    /**
+     * @var ObjectStorage<Car>
+     */
+    protected $cars;
 
     /**
      * Einsatztyp (Single Relation)
@@ -73,6 +116,9 @@ class Einsatz extends AbstractEntity
 
     public function getMens(): int { return $this->mens; }
     public function setMens(int $mens): void { $this->mens = $mens; }
+
+    public function getStations(): string { return $this->stations; }
+    public function setStations(string $stations): void { $this->stations = $stations; }
 
     // === Cars (MM Relation) ===
     public function getCars(): ObjectStorage { return $this->cars; }

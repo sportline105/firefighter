@@ -8,8 +8,8 @@ return [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'languageField' => 'sys_language_uid',
-        'transOrigPointerField' => 'l18n_parent',
-        'transOrigDiffSourceField' => 'l18n_diffsource',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',
@@ -25,10 +25,10 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => ['type' => 'language'],
         ],
-        'l18n_parent' => [
+        'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l10n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -37,7 +37,7 @@ return [
                 'foreign_table_where' => 'AND tx_firefighter_domain_model_einsatz.pid=###CURRENT_PID### AND tx_firefighter_domain_model_einsatz.sys_language_uid IN (-1,0)',
             ],
         ],
-        'l18n_diffsource' => ['config' => ['type' => 'passthrough']],
+        'l10n_diffsource' => ['config' => ['type' => 'passthrough']],
         'hidden' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
